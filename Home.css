@@ -1,0 +1,280 @@
+/* Reset-ish */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+/* Base font & page bg */
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  background: #d1d1d1;
+  color: #263738;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px; /* slightly bigger base font */
+  line-height: 1.5;
+}
+
+/* central white column - WIDENED */
+.site-wrap {
+  width: 1140px; /* increased width as requested */
+  margin: 22px auto;
+  background: #fff;
+  box-shadow: 0 0 0 12px rgba(0,0,0,0.02);
+  overflow: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 360px; /* slightly taller to match larger layout */
+  background-image: url("https://templatemo.com/templates/templatemo_539_simple_house/img/simple-house-01.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background: linear-gradient(0deg, rgba(18,30,30,0.35), rgba(18,30,30,0.18));
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-inner {
+  width: 92%;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  width: 54px; /* logo size adjusted */
+  height: auto;
+  display: block;
+}
+
+.brand-text h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px; /* bigger title */
+  letter-spacing: 0.2px;
+}
+
+.brand-text .sub {
+  color: rgba(255,255,255,0.95);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* nav */
+.main-nav a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  margin-left: 26px;
+  font-weight: 600;
+  font-size: 15px;
+  opacity: 0.95;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color .18s ease;
+}
+
+/* active underline */
+.main-nav a.active::after,
+.main-nav a:hover::after {
+  content: "";
+  width: 44px;
+  height: 3px;
+  background: rgba(255,255,255,0.95);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 3px;
+}
+
+/* also make hovered link text a bit brighter (still white-ish) */
+.main-nav a:hover { color: #ffffff; }
+
+/* MAIN CONTENT */
+.content {
+  padding: 58px 64px; /* increased padding for wider layout */
+  background: #fff;
+}
+
+/* Intro */
+.intro { text-align: center; margin-bottom: 32px; }
+.intro h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #263738;
+  font-size: 30px; /* bigger */
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* FORCE 3 lines for intro paragraph by limiting width */
+.intro .lead {
+  /* color: #6c7b7b;
+  max-width: 560px; /* reduced width to form 3 lines as requested */
+  /* margin: 0 auto 18px;
+  font-size: 16px; /* slightly larger text */
+  /* line-height: 1.6; */
+
+  text-align: center;
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: 626364;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.filters { display:flex; justify-content:center; gap:14px; margin-top: 16px; }
+.btn {
+  border: 1px solid #a7c6b8;
+  background: transparent;
+  color: #3b8b6f;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn-primary {
+  background: #3b8b6f;
+  color: white;
+  border-color: #3b8b6f;
+}
+
+/* hover for non-primary buttons -> should become like pizza (green with white text) */
+.btn:hover {
+  background: #3b8b6f;
+  color: #fff;
+  border-color: #3b8b6f;
+}
+
+/* gallery grid: 4 columns */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px 28px;
+  margin-top: 36px;
+}
+
+/* card */
+.card { background: transparent; }
+.card-img { width: 100%; height: 190px; overflow: hidden; border-radius: 3px; box-shadow: 0 1px 0 rgba(0,0,0,0.06) inset; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-title {
+  color: #2b6b66;
+  font-weight: 700;
+  font-size: 16px; /* bigger */
+  margin: 14px 0 8px;
+}
+.card-text {
+  color: #6f8683;
+  font-size: 14px; /* bigger text */
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.price {
+  color: #2b9a84;
+  font-weight: 700;
+  font-size: 15px;
+}
+/* banner with pink avocado */
+.banner {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  align-items: flex-start; /* text at top, not middle */
+}
+
+.banner img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* TEXT MUST BE LEFT ALIGNED EXACTLY LIKE YOUR SECOND IMAGE */
+.banner-text {
+  text-align: left;
+  display: block;
+}
+
+.banner-text h3 {
+  color: #2b6b66;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.banner-text p {
+  color: #6c7b7b;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 22px; /* more spacing above button */
+}
+
+/* TEXT BLOCK */
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left aligned text */
+}
+
+/* READ MORE BUTTON — right side */
+.btn-outline {
+  align-self: flex-end; /* moves ONLY the button to the right */
+  border: 1px solid #b8b8b8;
+  padding: 12px 26px;
+  text-decoration: none;
+  color: #555;
+  background: #ffffff;
+  font-weight: 600;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+
+
+/* footer */
+.site-footer {
+  padding: 24px 0;
+  text-align: center;
+  background: #fff;
+  color: #9aa6a6;
+  font-size: 13px;
+  border-top: 1px solid #eee;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+  .site-wrap { width: 96%; }
+  .hero { height: 340px; }
+}
+@media (max-width: 1024px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .banner { grid-template-columns: 1fr; }
+  .banner img { height: 260px; }
+  .hero-inner { margin-bottom: 18px; }
+}
+@media (max-width: 560px) {
+  .hero { height: 220px; }
+  .intro h2 { font-size: 20px; }
+  .gallery { grid-template-columns: 1fr; }
+  .card-img { height: 220px; }
+  .content { padding: 24px; }
+  .banner-text { align-items: flex-start; text-align: left; }
+  .btn-outline { align-self: flex-start; } /* for small screens */
+}
